@@ -1,7 +1,11 @@
 package application;
 
 import chess.ChessPiece;
+import chess.ChessPosition;
 import chess.Color;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class UI {
 	
@@ -24,6 +28,17 @@ public class UI {
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 	
+	public static ChessPosition readChessPosition(Scanner sc) {
+		try {
+			String s = sc.nextLine();
+			char coluna = s.charAt(0); //Le diretamente a posição de caracter do xadrez, exemplo a1
+			int linha = Integer.parseInt(s.substring(1)); //recorta somente a parte numerica de uma posição de peça
+			return new ChessPosition(coluna, linha);
+		} catch (RuntimeException e) {
+			//Erro na entrada de dados
+			throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8");
+		}
+	}
 	
 	public static void printBoard(ChessPiece[][] pieces) {
 		for (int i = 0; i < pieces.length; i++) {
