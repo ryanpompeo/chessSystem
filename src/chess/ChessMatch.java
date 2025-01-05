@@ -161,6 +161,8 @@ public class ChessMatch {
 		if (!board.piece(position).isThereAnyPossibleMove()) {
 			throw new ChessException("There is no possible moves for the chosen piece");
 		}
+		
+		
 	}
 	
 	private void validateTargetPosition(Position source, Position target) {

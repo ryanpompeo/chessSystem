@@ -119,5 +119,7 @@ public class King extends ChessPiece {
 		
 		
 		return matriz;
+		
+		
 	}
 }
