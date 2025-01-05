@@ -163,6 +163,7 @@ public class ChessMatch {
 		}
 		
 		
+		
 	}
 	
 	private void validateTargetPosition(Position source, Position target) {
