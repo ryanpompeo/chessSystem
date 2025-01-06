@@ -100,11 +100,6 @@ public class Queen extends ChessPiece {
 		}
 		
 		
-		
-		
-		
-		
-		
 		return matriz;
 	}
 	
